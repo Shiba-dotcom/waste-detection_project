@@ -1,0 +1,11 @@
+
+path: ../data/processed
+train: images/train
+val: images/val
+
+names:
+  0: Glass
+  1: Metal
+  2: Other
+  3: Paper
+  4: Plastic
