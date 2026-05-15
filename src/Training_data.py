@@ -3,7 +3,19 @@ import pandas as pd
 import os
 import shutil
 
-with open("../data/raw/annotations.json", "r") as f:
+# Uu tien dung file da lam sach, fallback sang file goc
+cleaned_path = "../data/raw/annotations_cleaned.json"
+original_path = "../data/raw/annotations.json"
+
+if os.path.exists(cleaned_path):
+    ann_path = cleaned_path
+    print("[INFO] Su dung annotations_cleaned.json (da lam sach)")
+else:
+    ann_path = original_path
+    print("[WARN] Khong tim thay annotations_cleaned.json, dung file goc")
+    print("       Hay chay 'python src/data_cleaning.py' truoc!")
+
+with open(ann_path, "r") as f:
     data = json.load(f)
 
 mapping_df = pd.read_csv("mapping.csv")
