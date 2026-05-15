@@ -33,9 +33,9 @@ axes[2].grid(True, alpha=0.3)
 
 plt.suptitle("Lịch sử Training YOLOv8n (50 Epoch)", fontsize=14, fontweight="bold")
 plt.tight_layout()
-plt.savefig(os.path.join(RESULTS, "bieu_do_5_training_history.png"), dpi=150)
+plt.savefig(os.path.join(RESULTS, "bieu_do_4_training_history.png"), dpi=150)
 plt.close()
-print("[Chart 5] Saved: bieu_do_5_training_history.png")
+print("[Chart 4] Saved: bieu_do_4_training_history.png")
 
 fig, axes = plt.subplots(1, 3, figsize=(15, 5))
 loss_cols = ["train/box_loss", "train/cls_loss", "train/dfl_loss"]
@@ -50,9 +50,9 @@ for ax, col, name, color in zip(axes, loss_cols, loss_names, colors):
 
 plt.suptitle("Đường cong Loss - YOLOv8n (50 Epoch)", fontsize=14, fontweight="bold")
 plt.tight_layout()
-plt.savefig(os.path.join(RESULTS, "bieu_do_6_loss_curves.png"), dpi=150)
+plt.savefig(os.path.join(RESULTS, "bieu_do_5_loss_curves.png"), dpi=150)
 plt.close()
-print("[Chart 6] Saved: bieu_do_6_loss_curves.png")
+print("[Chart 5] Saved: bieu_do_5_loss_curves.png")
 
 last = df.iloc[-1]
 ep5  = df[df["epoch"] == 5].iloc[0] if 5 in df["epoch"].values else df.iloc[4]
