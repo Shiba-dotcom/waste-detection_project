@@ -1,7 +1,12 @@
-pillow
-requests
-jupyter
-numpy
-pandas
+ultralytics>=8.0.0
+opencv-python
+Pillow
+pycocotools
 matplotlib
 seaborn
+pandas
+numpy
+tqdm
+jupyter
+scikit-learn
+ipykernel

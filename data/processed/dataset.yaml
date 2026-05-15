@@ -1,8 +1,8 @@
-
-path: ../data/processed
+﻿path: A:/VisualStudioCode/Python/waste-detection_project-1/data/processed
 train: images/train
 val: images/val
 
+nc: 5
 names:
   0: Glass
   1: Metal
