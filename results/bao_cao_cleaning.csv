@@ -1,0 +1,12 @@
+Metric,Value
+So anh goc,1500
+So annotations goc,4784
+So anh sau cleaning,1500
+So annotations sau cleaning,4776
+Duplicate annotations loai,0
+Missing fields loai,0
+Orphan category loai,0
+BBox bat thuong loai,8
+Anh loi/truncated/nho loai,0
+"YOLO labels ngoai [0,1]",0
+Anh grayscale (giu lai),0

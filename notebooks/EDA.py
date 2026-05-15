@@ -160,9 +160,9 @@ for i, img_info in enumerate(sample_imgs):
 
 plt.suptitle("Mẫu Ảnh với Bounding Box Annotation", fontsize=14, fontweight="bold")
 plt.tight_layout()
-plt.savefig(os.path.join(RESULTS, "bieu_do_4_sample_images.png"), dpi=150)
+plt.savefig(os.path.join(RESULTS, "truc_quan_mau_voi_khung_bao.png"), dpi=150)
 plt.close()
-print("[Chart 4] Saved: bieu_do_4_sample_images.png")
+print("[Chart 4] Saved: truc_quan_mau_voi_khung_bao.png")
 
 stats = {
     "Ten bo du lieu"      : ["TACO (Trash Annotations in Context)"],
