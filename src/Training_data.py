@@ -3,23 +3,19 @@ import pandas as pd
 import os
 import shutil
 
-# [1] Load file annotations của dataset
 with open("../data/raw/annotations.json", "r") as f:
     data = json.load(f)
 
-# [2] Load mapping (map từ 60 lớp mặc định ban đầu thành 5 nhóm chính) 
 mapping_df = pd.read_csv("mapping.csv")
 mapping = dict(zip(mapping_df["name"], mapping_df["group"]))
 
 
 idtn = {c["id"]: c["name"] for c in data["categories"]}
 
-# [4] Tạo cấu trúc lưu trữ
 base_out = "../data/processed" # Thư mục chứa 
 img_out = os.path.join(base_out, "images") # Thư mục chứa file hình
 label_out = os.path.join(base_out, "labels") # Thư mục hứa file annotation (định dạng txt)
 
-# [5] Reset lại dữ liệu (về không) nếu thư mục processed đã tồn tại
 if os.path.exists(base_out):
     shutil.rmtree(base_out)
 
@@ -27,15 +23,6 @@ if os.path.exists(base_out):
 os.makedirs(img_out, exist_ok=True)
 os.makedirs(label_out, exist_ok=True)
 
-
-"""
-[6] Chuyển 5 nhóm lớp thành các chỉ số (index), trong đó:
-Plastic = 0
-Paper = 1
-Metal = 2
-Glass = 3
-Other = 4
-"""
 classes = sorted(set(mapping.values()))
 class2id = {c: i for i, c in enumerate(classes)}
 
@@ -43,7 +30,6 @@ class2id = {c: i for i, c in enumerate(classes)}
 
 img_map = {img["id"]: img for img in data["images"]}
 
-# [7] Copy phần hình bên raw sang processed
 raw_img_dir = "../data/raw"
 
 for img_id, img in img_map.items():
