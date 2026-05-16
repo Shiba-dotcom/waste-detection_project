@@ -1,8 +1,8 @@
 task: detect
 mode: train
 model: yolov8n.pt
-data: A:\VisualStudioCode\Python\waste-detection_project-1\data\processed\dataset.yaml
-epochs: 5
+data: A:\VisualStudioCode\Python\waste-detection_project\data\processed\dataset.yaml
+epochs: 50
 time: null
 patience: 100
 batch: 16
@@ -12,7 +12,7 @@ save_period: -1
 cache: false
 device: cpu
 workers: 8
-project: A:\VisualStudioCode\Python\waste-detection_project-1\results\runs
+project: A:\VisualStudioCode\Python\waste-detection_project\results\runs
 name: baseline_yolov8n
 exist_ok: true
 pretrained: true
@@ -107,4 +107,4 @@ auto_augment: randaugment
 erasing: 0.4
 cfg: null
 tracker: botsort.yaml
-save_dir: A:\VisualStudioCode\Python\waste-detection_project-1\results\runs\baseline_yolov8n
+save_dir: A:\VisualStudioCode\Python\waste-detection_project\results\runs\baseline_yolov8n

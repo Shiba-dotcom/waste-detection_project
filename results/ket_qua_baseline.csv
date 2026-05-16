@@ -1,3 +1,2 @@
 Model,mAP@0.5 (%),mAP@0.5:0.95 (%),Precision (%),Recall (%),Inference (ms)
-"YOLOv8n (baseline, 5 epoch)",14.61,9.68,20.5,28.43,N/A
-YOLOv8n (50 epoch),25.96,18.78,36.41,28.77,N/A
+"YOLOv8n (baseline, 50 epoch)",25.96,18.78,36.41,28.77,N/A
