@@ -1,4 +1,4 @@
-﻿path: A:/VisualStudioCode/Python/waste-detection_project-1/data/processed
+path: A:/VisualStudioCode/Python/waste-detection_project/data/processed
 train: images/train
 val: images/val
 

@@ -55,19 +55,10 @@ plt.close()
 print("[Chart 5] Saved: bieu_do_5_loss_curves.png")
 
 last = df.iloc[-1]
-ep5  = df[df["epoch"] == 5].iloc[0] if 5 in df["epoch"].values else df.iloc[4]
 
 result_table = pd.DataFrame([
     {
-        "Model": "YOLOv8n (baseline, 5 epoch)",
-        "mAP@0.5 (%)": round(ep5["metrics/mAP50(B)"]*100, 2),
-        "mAP@0.5:0.95 (%)": round(ep5["metrics/mAP50-95(B)"]*100, 2),
-        "Precision (%)": round(ep5["metrics/precision(B)"]*100, 2),
-        "Recall (%)": round(ep5["metrics/recall(B)"]*100, 2),
-        "Inference (ms)": "N/A",
-    },
-    {
-        "Model": "YOLOv8n (50 epoch)",
+        "Model": "YOLOv8n (baseline, 50 epoch)",
         "mAP@0.5 (%)": round(last["metrics/mAP50(B)"]*100, 2),
         "mAP@0.5:0.95 (%)": round(last["metrics/mAP50-95(B)"]*100, 2),
         "Precision (%)": round(last["metrics/precision(B)"]*100, 2),
@@ -77,8 +68,6 @@ result_table = pd.DataFrame([
 ])
 result_table.to_csv(os.path.join(RESULTS, "ket_qua_baseline.csv"), index=False)
 print("\n[OK] Saved: ket_qua_baseline.csv")
-print("\nKet qua baseline (5 epoch):")
-print(f"  mAP50: {ep5['metrics/mAP50(B)']:.4f} | Precision: {ep5['metrics/precision(B)']:.4f} | Recall: {ep5['metrics/recall(B)']:.4f}")
-print("\nKet qua day du (50 epoch):")
+print("\nKet qua baseline (50 epoch):")
 print(f"  mAP50: {last['metrics/mAP50(B)']:.4f} | Precision: {last['metrics/precision(B)']:.4f} | Recall: {last['metrics/recall(B)']:.4f}")
 print("\n[HOAN TAT] Bieu do training history da luu trong results/")

@@ -11,7 +11,7 @@ RESULTS   = BASE_DIR / "results"
 RESULTS.mkdir(exist_ok=True)
 
 print("="*55)
-print("  BASELINE: YOLOv8n - Fine-tune 5 Epoch")
+print("  BASELINE: YOLOv8n - Fine-tune 50 Epoch")
 print("  Ly do chon: Phu hop bai toan Object Detection")
 print("  Metrics: mAP@0.5, Precision, Recall, Inference time")
 print("="*55)
@@ -22,12 +22,12 @@ except ImportError:
     print("[LOI] Chua cai ultralytics. Chay: pip install ultralytics")
     sys.exit(1)
 
-print("\n[1] Bat dau train baseline YOLOv8n (5 epoch) ...")
+print("\n[1] Bat dau train baseline YOLOv8n (50 epoch) ...")
 model = YOLO("yolov8n.pt")
 
 train_results = model.train(
     data     = str(YAML_PATH),
-    epochs   = 5,
+    epochs   = 50,
     imgsz    = 640,
     batch    = 16,
     name     = "baseline_yolov8n",
@@ -46,7 +46,7 @@ recall   = float(metrics.box.mr)
 map5095  = float(metrics.box.map)
 
 print(f"\n{'='*55}")
-print(f"  KET QUA BASELINE - YOLOv8n (5 epoch)")
+print(f"  KET QUA BASELINE - YOLOv8n (50 epoch)")
 print(f"{'='*55}")
 print(f"  mAP@0.5      : {map50:.4f}   ({map50*100:.2f}%)")
 print(f"  mAP@0.5:0.95 : {map5095:.4f}")
@@ -68,7 +68,7 @@ else:
     print("  [Bo qua] Khong tim thay anh val.")
 
 result_row = {
-    "Model"           : "YOLOv8n (baseline, 5 epoch)",
+    "Model"           : "YOLOv8n (baseline, 50 epoch)",
     "mAP@0.5 (%)"     : round(map50*100, 2),
     "mAP@0.5:0.95 (%)": round(map5095*100, 2),
     "Precision (%)"   : round(prec*100, 2),
